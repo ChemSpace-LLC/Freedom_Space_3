@@ -1,0 +1,18 @@
+expansion:
+  uspto:
+    - /data/uspto_model.onnx
+    - /data/uspto_templates.csv.gz
+filter:
+  uspto: /data/uspto_filter_model.onnx
+stock:
+  chemspace: /data/chemspace_stock.hdf5
+search:
+  algorithm: mcts
+  max_transforms: 8
+  iteration_limit: 140
+  return_first: True
+  time_limit: 120
+  exclude_target_from_stock: True
+
+  
+
