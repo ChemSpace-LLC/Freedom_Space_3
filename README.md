@@ -3,6 +3,12 @@
 
 This repository contains data and tools used in the **Freedom 3** paper to evaluate chemical diversity, enumerate compounds, assess synthetic accessibility, and analyze physicochemical properties.
 
+## Freedom Space 3.0 availability
+The Freedom Space 3.0 (as well as the newer version 4.0) is available in the enumerated format (5B compounds) as well as synthon-based format (9B compounds) free of charge through Chemspace.
+Please contact cs_sales@chem-space.com to request the access credentials. 
+
+The enumerated space can be downloaded via FTP, the synthon files are quite small and distributed directly through email.
+
 ##  Structure
 
 ```
@@ -21,6 +27,18 @@ Freedom_3_paper/
 ├── enumeration_example/
 └── synthons_example/
 ```
+## Enumeration & Synthons
+
+This folder contains examples that can be useful for understanding of the synthon format and the enumeration process.
+
+- Use `enumeration_example/enumeration.ipynb` for compound enumeration.
+- Examples of synthons and reaction files are available under `synthons_example/`.
+
+#### Requirements
+
+- `Python 3.13.0`
+- `rdkit 2024.9.2`
+- `pandas 2.2.3`
 
 ##  Diversity & Physchem Analysis
 This module provides all necessary data and code to reproduce diversity and physicochemical analyses.
@@ -102,6 +120,8 @@ To assess synthetic accessibility of compounds using **AiZynthFinder**, follow t
     ```
     This generates 1K_SMILES_with_AiZynthFinder_Score.csv, which includes SMILES and their Solved_with_AiZynthFinder status.
 
+To perform synthetic accessibility analysis you will require the complete in-stock reagent catalog. As it is quite dynamic, please contact cs_sales@chem-space.com for the most up-to-date version. 
+
 ### Scored Data
 
 This directory contains all precomputed synthetic accessibility scores used to generate the plots and figures presented in the paper
@@ -112,19 +132,6 @@ synthetic_accessibility/Scored_Data/
 └── random_1M.tar.xz
 ```
 Each archive contains corresponding CSV files with computed SA/RA/AiZynthFinder scores used in the analysis.
-
-## Enumeration & Synthons
-
-This module provides tools for compound enumeration.
-
-- Use `enumeration_example/enumeration.ipynb` for compound enumeration.
-- Synthons and reaction files are available under `synthons_example/`.
-
-#### Requirements
-
-- `Python 3.13.0`
-- `rdkit 2024.9.2`
-- `pandas 2.2.3`
 
 ---
 
