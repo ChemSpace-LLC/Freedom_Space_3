@@ -1,9 +1,7 @@
 
 # Freedom 3 paper
 
-This repository contains data and tools used in the **Freedom 3** paper to evaluate chemical diversity, enumerate compounds, assess synthetic accessibility (RA & SA scores), and analyze physicochemical properties.
-
----
+This repository contains data and tools used in the **Freedom 3** paper to evaluate chemical diversity, enumerate compounds, assess synthetic accessibility, and analyze physicochemical properties.
 
 ## 📁 Folder Structure
 
@@ -24,7 +22,6 @@ Freedom_3_paper/
 └── synthons_example/
 ```
 
----
 ##  Diversity & Physchem Analysis
 This module provides all necessary data and code to reproduce diversity and physicochemical analyses.
 
