@@ -53,18 +53,9 @@ Freedom_3_paper/
 
 ```
 
----
 
-## 🚀 Quick Start
-
-### 1. 🧪 Create and activate a Conda environment:
-
-```bash
-conda create -n freedom3 python=3.8
-conda activate freedom3
-```
-
-### 2. 📦 Install requirements for scoring:
+## SA/RA Scoring
+📦 Install requirements for scoring:
 
 Navigate to `RAscore_and_SAscore/` and install:
 
@@ -72,15 +63,7 @@ Navigate to `RAscore_and_SAscore/` and install:
 cd synthetic_accessibility/RAscore_and_SAscore/
 pip install -r requirements.txt
 ```
-
 > ⚠️ Note: TensorFlow 2.5.0 (CPU or GPU) is required for the legacy RA model.  
-> Make sure `model.h5` is used instead of `.tf` format due to Keras 3 compatibility.
-
----
-
-## 🧠 Notebooks
-
-### ▶️ Run SA/RA Scoring
 
 Open in Jupyter:
 
@@ -97,49 +80,68 @@ This notebook:
 
 ---
 
-## 🧪 Synthetic Accessibility (AiZynthFinder)
+##  Synthetic Accessibility (AiZynthFinder)
 
-To score via AiZynthFinder:
+To assess synthetic accessibility of compounds using **AiZynthFinder**, follow these steps:
 
-```bash
-cd synthetic_accessibility/AiZynthFinder_Score/
-bash process_with_Aizynthfinder.sh
-```
+1. **Install AiZynthFinder**  
+   Installation was done following the official documentation:  
+   🔗 https://github.com/MolecularAI/aizynthfinder
 
-This runs `aizynthcli` on `1K_SMILES.smi` using a custom config and logs progress.
+2. **Run retrosynthetic planning**  
+   From the `synthetic_accessibility/AiZynthFinder_Score/` directory:
 
-To post-process results:
+   ```bash
+   cd synthetic_accessibility/AiZynthFinder_Score/
+   bash process_with_Aizynthfinder.sh
+   ```
+
+3. **Post-process the output**
+
+After computation is complete, results are parsed using:
 
 ```bash
 python process_log_file.py
 ```
+This generates 1K_SMILES_with_AiZynthFinder_Score.csv, which includes SMILES and their Solved_with_AiZynthFinder status.
+
 
 ---
-
 ## 📊 Diversity & Physchem Analysis
 
 - All supporting datasets, UMAP embeddings, and plots are located in `diversity_and_physchem_analysis/`
-- Launch UMAP scripts using:
-```bash
-cd UMAP
-bash run_umap.sh
-```
+- Launch UMAP scripts using the files in `diversity_and_physchem_analysis/UMAP/`:
+  - `run_umap.sh`
+  - `umap_jaccard.py`
 
 ---
 
-## 🧱 Enumeration & Synthons
+### 📦 Requirements
+
+This module has been tested with the following packages and Python version:
+
+- `Python 3.13.0`
+- `rdkit 2024.9.2`
+- `pandas 2.2.3`
+- `umap 0.1.1`
+
+
+
+---
+## Enumeration & Synthons
 
 - Use `enumeration_example/enumeration.ipynb` for compound enumeration.
 - Synthons and reaction mappings are available under `synthons_example/`.
 
 ---
 
-## 📬 Contact
+### 📦 Requirements
 
-For questions or collaboration: **Serhii Hlotov**
+This module has been tested with the following packages and Python version:
 
+- `Python 3.13.0`
+- `rdkit 2024.9.2`
+- `pandas 2.2.3`
 ---
 
-## ✅ License
 
-This project is for research and academic purposes only. License TBD.
