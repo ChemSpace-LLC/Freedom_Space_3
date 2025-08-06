@@ -42,13 +42,11 @@ Freedom_3_paper/
 │   │   ├── requirements.txt
 │   │   ├── RAscore/
 │   │   └── SAscore/
-│   │       ├── fpscores.pkl.gz
-│   │       └── sascorer.py
 │   └── Scored_Data/
 │       ├── 2_comp.tar.xz
 │       ├── 3_comp.tar.xz
-│       ├── random_1M.tar.xz
-│       └── t.py
+│       └── random_1M.tar.xz
+│        
 └── synthons_example/
     ├── Freedom_3_0_reactions_example.tsv
     └── Freeedom 3_0_synthons_example.tsv
