@@ -9,51 +9,49 @@ This repository contains data and tools used in the **Freedom 3** paper to evalu
 
 ```
 Freedom_3_paper/
-│ 
+│
 ├── diversity_and_physchem_analysis/
 │   ├── datasets/
-│   │   ├── ChEMBL35_for_scaffolds.csv.gz
-│   │   ├── ChEMBL_unique_scaffolds.csv.gz
-│   │   ├── Freedom_2_1M_random_compounds.csv.gz
-│   │   ├── Freedom_2_1M_random_compounds_unique_scaffolds.csv.gz
-│   │   ├── Freedom_3_1M_random_compounds.csv.gz
-│   │   └── Freedom_3_1M_random_compounds_unique_scaffolds.csv.gz
 │   ├── physicochemical_properties/
-│   │   ├── phys_chem_prop.xlsx
-│   │   └── plots.pptx
 │   └── UMAP/
-│       ├── run_umap.sh
-│       └── umap_jaccard.py
-
+│
 ├── synthetic_accessibility/
 │   ├── AiZynthFinder_Score/
-│   │   ├── 1K_SMILES.log
-│   │   ├── 1K_SMILES.smi
-│   │   ├── 1K_SMILES_with_AiZynthFinder_Score.csv
-│   │   ├── custom_config.yml
-│   │   ├── process_log_file.py
-│   │   └── process_with_Aizynthfinder.sh
 │   ├── RAscore_and_SAscore/
-│   │   ├── 1K_SMILES.csv
-│   │   ├── 1K_SMILES_SA_RA.csv
-│   │   ├── Scoring_pipeline.ipynb
-│   │   ├── requirements.txt
-│   │   ├── RAscore/
-│   │   └── SAscore/
 │   └── Scored_Data/
-│       ├── 2_comp.tar.xz
-│       ├── 3_comp.tar.xz
-│       └── random_1M.tar.xz
-│ 
+│
 ├── enumeration_example/
-│   ├── enumeration.ipynb
-│   └── enumeration_results_test.tsv
-│      
 └── synthons_example/
-    ├── Freedom_3_0_reactions_example.tsv
-    └── Freeedom 3_0_synthons_example.tsv
-
 ```
+
+---
+##  Diversity & Physchem Analysis
+This module provides all necessary data and code to reproduce diversity and physicochemical analyses.
+
+### Umap
+To run UMAP-based diversity projections:
+
+```bash
+cd diversity_and_physchem_analysis/UMAP/
+bash run_umap.sh
+```
+This module has been tested with the following packages and Python version:
+- `Python 3.13.0`
+- `rdkit 2024.9.2`
+- `pandas 2.2.3`
+- `umap 0.1.1`
+- 
+### physicochemical_properties
+Contains precomputed molecular properties and summary plots used in the analysis:
+
+- phys_chem_prop.xlsx # Excel file with molecular descriptors
+- plots.pptx # Summary visualizations used in the article
+
+### datasets
+Includes all compound datasets and their corresponding scaffold extractions used for diversity and scaffold analyses:
+
+---
+
 ## Synthetic accessibility
 
 ### SA/RA Scoring
@@ -84,8 +82,7 @@ The notebook performs the following steps:
     - **SA score** using a fragment-based RDKit scoring approach from [SAscore (GeauxEric)](https://github.com/GeauxEric/SAscore.git)
 - Saves result to `1K_SMILES_SA_RA.csv`
 
----
-##  AiZynthFinder evaluation
+###  AiZynthFinder evaluation
 
 To assess synthetic accessibility of compounds using **AiZynthFinder**, follow these steps:
 
@@ -110,7 +107,7 @@ To assess synthetic accessibility of compounds using **AiZynthFinder**, follow t
     ```
     This generates 1K_SMILES_with_AiZynthFinder_Score.csv, which includes SMILES and their Solved_with_AiZynthFinder status.
 
-## Scored Data
+### Scored Data
 
 This directory contains all precomputed synthetic accessibility scores used to generate the plots and figures presented in the paper
 ```
@@ -121,42 +118,23 @@ synthetic_accessibility/Scored_Data/
 ```
 Each archive contains corresponding CSV files with computed SA/RA/AiZynthFinder scores used in the analysis.
 
----
-## 📊 Diversity & Physchem Analysis
-
-- All supporting datasets, UMAP embeddings, and plots are located in `diversity_and_physchem_analysis/`
-- Launch UMAP scripts using the files in `diversity_and_physchem_analysis/UMAP/`:
-  - `run_umap.sh`
-  - `umap_jaccard.py`
-
----
-
-### 📦 Requirements
-
-This module has been tested with the following packages and Python version:
-
-- `Python 3.13.0`
-- `rdkit 2024.9.2`
-- `pandas 2.2.3`
-- `umap 0.1.1`
-
-
 
 ---
 ## Enumeration & Synthons
 
+This module provides tools for compound enumeration.
+
 - Use `enumeration_example/enumeration.ipynb` for compound enumeration.
-- Synthons and reaction mappings are available under `synthons_example/`.
+- Synthons and reaction files are available under `synthons_example/`.
 
 ---
 
-### 📦 Requirements
-
-This module has been tested with the following packages and Python version:
+#### Requirements
 
 - `Python 3.13.0`
 - `rdkit 2024.9.2`
 - `pandas 2.2.3`
+- 
 ---
 
 
