@@ -50,8 +50,6 @@ Contains precomputed molecular properties and summary plots used in the analysis
 ### datasets
 Includes all compound datasets and their corresponding scaffold extractions used for diversity and scaffold analyses:
 
----
-
 ## Synthetic accessibility
 
 ### SA/RA Scoring
@@ -118,16 +116,12 @@ synthetic_accessibility/Scored_Data/
 ```
 Each archive contains corresponding CSV files with computed SA/RA/AiZynthFinder scores used in the analysis.
 
-
----
 ## Enumeration & Synthons
 
 This module provides tools for compound enumeration.
 
 - Use `enumeration_example/enumeration.ipynb` for compound enumeration.
 - Synthons and reaction files are available under `synthons_example/`.
-
----
 
 #### Requirements
 
