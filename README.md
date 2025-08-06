@@ -37,7 +37,7 @@ This module has been tested with the following packages and Python version:
 - `rdkit 2024.9.2`
 - `pandas 2.2.3`
 - `umap 0.1.1`
-- 
+
 ### physicochemical_properties
 Contains precomputed molecular properties and summary plots used in the analysis:
 
@@ -109,7 +109,7 @@ This directory contains all precomputed synthetic accessibility scores used to g
 synthetic_accessibility/Scored_Data/
 ├── 2_comp.tar.xz
 ├── 3_comp.tar.xz
-└── random_1M.tar.xz+]
+└── random_1M.tar.xz
 ```
 Each archive contains corresponding CSV files with computed SA/RA/AiZynthFinder scores used in the analysis.
 
@@ -125,7 +125,7 @@ This module provides tools for compound enumeration.
 - `Python 3.13.0`
 - `rdkit 2024.9.2`
 - `pandas 2.2.3`
-- 
+
 ---
 
 
