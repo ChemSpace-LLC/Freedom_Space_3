@@ -1,7 +1,7 @@
 
 # Freedom 3 paper
 
-This repository contains data and tools used in the **Freedom 3** project to evaluate chemical diversity, enumerate compounds, assess synthetic accessibility (RA & SA scores), and analyze physicochemical properties.
+This repository contains data and tools used in the **Freedom 3** paper to evaluate chemical diversity, enumerate compounds, assess synthetic accessibility (RA & SA scores), and analyze physicochemical properties.
 
 ---
 
@@ -9,7 +9,7 @@ This repository contains data and tools used in the **Freedom 3** project to eva
 
 ```
 Freedom_3_paper/
-├── README.md
+│ 
 ├── diversity_and_physchem_analysis/
 │   ├── datasets/
 │   │   ├── ChEMBL35_for_scaffolds.csv.gz
@@ -24,9 +24,7 @@ Freedom_3_paper/
 │   └── UMAP/
 │       ├── run_umap.sh
 │       └── umap_jaccard.py
-├── enumeration_example/
-│   ├── enumeration.ipynb
-│   └── enumeration_results_test.tsv
+
 ├── synthetic_accessibility/
 │   ├── AiZynthFinder_Score/
 │   │   ├── 1K_SMILES.log
@@ -46,50 +44,57 @@ Freedom_3_paper/
 │       ├── 2_comp.tar.xz
 │       ├── 3_comp.tar.xz
 │       └── random_1M.tar.xz
-│        
+│ 
+├── enumeration_example/
+│   ├── enumeration.ipynb
+│   └── enumeration_results_test.tsv
+│      
 └── synthons_example/
     ├── Freedom_3_0_reactions_example.tsv
     └── Freeedom 3_0_synthons_example.tsv
 
 ```
+## Synthetic accessibility
 
+### SA/RA Scoring
 
-## SA/RA Scoring
-📦 Install requirements for scoring:
+To assess synthetic accessibility and retrosynthetic tractability via RA and SA scores:
 
-Navigate to `RAscore_and_SAscore/` and install:
+1. **Installation**  
+   Navigate to the scoring module and install the required packages:
 
-```bash
-cd synthetic_accessibility/RAscore_and_SAscore/
-pip install -r requirements.txt
-```
+   ```bash
+   cd synthetic_accessibility/RAscore_and_SAscore/
+   pip install -r requirements.txt
+    ```
 > ⚠️ Note: TensorFlow 2.5.0 (CPU or GPU) is required for the legacy RA model.  
+
+2. **Launch Scoring Pipeline**
 
 Open in Jupyter:
 
 ```bash
 jupyter notebook Scoring_pipeline.ipynb
 ```
+The notebook performs the following steps:
 
-This notebook:
 - Loads SMILES from `1K_SMILES.csv`
 - Computes:
-  - **RA score** via pretrained NN model
-  - **SA score** using RDKit-based scoring
+    - **RA score** using a pretrained neural network model from [RAscore (reymond-group)](https://github.com/reymond-group/RAscore.git)
+    - **SA score** using a fragment-based RDKit scoring approach from [SAscore (GeauxEric)](https://github.com/GeauxEric/SAscore.git)
 - Saves result to `1K_SMILES_SA_RA.csv`
 
 ---
-
-##  Synthetic Accessibility (AiZynthFinder)
+##  AiZynthFinder evaluation
 
 To assess synthetic accessibility of compounds using **AiZynthFinder**, follow these steps:
 
-1. **Install AiZynthFinder**  
-   Installation was done following the official documentation:  
+1. **Installation**  
+   AiZynthFinder was installed following the official documentation:  
    🔗 https://github.com/MolecularAI/aizynthfinder
-
-2. **Run retrosynthetic planning**  
-   From the `synthetic_accessibility/AiZynthFinder_Score/` directory:
+   
+2. **Retrosynthetic Planning**  
+   To compute synthetic accessibility, the retrosynthesis pipeline was executed from:
 
    ```bash
    cd synthetic_accessibility/AiZynthFinder_Score/
@@ -97,14 +102,24 @@ To assess synthetic accessibility of compounds using **AiZynthFinder**, follow t
    ```
 
 3. **Post-process the output**
+    
+    After computation is complete, results are parsed using:
+    
+    ```bash
+    python process_log_file.py
+    ```
+    This generates 1K_SMILES_with_AiZynthFinder_Score.csv, which includes SMILES and their Solved_with_AiZynthFinder status.
 
-After computation is complete, results are parsed using:
+## Scored Data
 
-```bash
-python process_log_file.py
+This directory contains all precomputed synthetic accessibility scores used to generate the plots and figures presented in the paper
 ```
-This generates 1K_SMILES_with_AiZynthFinder_Score.csv, which includes SMILES and their Solved_with_AiZynthFinder status.
-
+synthetic_accessibility/Scored_Data/
+├── 2_comp.tar.xz
+├── 3_comp.tar.xz
+└── random_1M.tar.xz+]
+```
+Each archive contains corresponding CSV files with computed SA/RA/AiZynthFinder scores used in the analysis.
 
 ---
 ## 📊 Diversity & Physchem Analysis
