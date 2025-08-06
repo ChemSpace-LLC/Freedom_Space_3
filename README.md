@@ -1,7 +1,9 @@
 
-# Freedom 3 paper
+# Freedom Space 3.0
 
-This repository contains data and tools used in the **Freedom 3** paper to evaluate chemical diversity, enumerate compounds, assess synthetic accessibility, and analyze physicochemical properties.
+This repository contains data and tools used in the **Freedom Space 3.0** paper to evaluate chemical diversity, enumerate compounds, assess synthetic accessibility, and analyze physicochemical properties.
+
+<img width="975" height="526" alt="Freedom Space 3 0 abstract_4" src="https://github.com/user-attachments/assets/0ae18528-3961-46aa-8ee4-5f9a2f2d7975" />
 
 ## Freedom Space 3.0 availability
 The Freedom Space 3.0 (as well as the newer version 4.0) is available in the enumerated format (5B compounds) as well as synthon-based format (9B compounds) free of charge through Chemspace.
@@ -9,7 +11,7 @@ Please contact cs_sales@chem-space.com to request the access credentials.
 
 The enumerated space can be downloaded via FTP, the synthon files are quite small and distributed directly through email.
 
-##  Structure
+##  Repository Structure
 
 ```
 Freedom_3_paper/
