@@ -3,7 +3,7 @@
 
 This repository contains data and tools used in the **Freedom 3** paper to evaluate chemical diversity, enumerate compounds, assess synthetic accessibility, and analyze physicochemical properties.
 
-## 📁 Folder Structure
+##  Structure
 
 ```
 Freedom_3_paper/
