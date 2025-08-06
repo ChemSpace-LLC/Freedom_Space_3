@@ -1,5 +1,5 @@
 
-# Freedom 3 – Enumeration, Synthetic Accessibility & Diversity Analysis
+# Freedom 3 paper
 
 This repository contains data and tools used in the **Freedom 3** project to evaluate chemical diversity, enumerate compounds, assess synthetic accessibility (RA & SA scores), and analyze physicochemical properties.
 
@@ -9,32 +9,50 @@ This repository contains data and tools used in the **Freedom 3** project to eva
 
 ```
 Freedom_3_paper/
-│
-├── diversity_and_physchem_analysis/        # Chemical diversity and phys-chem analysis
-│   ├── datasets/                           # Raw CSV datasets used in analysis
-│   ├── physicochemical_properties/         # XLSX data and plots
-│   └── UMAP/                               # UMAP dimensionality reduction (scripts)
-│
-├── enumeration_example/                    # Example of compound enumeration
-│   ├── enumeration.ipynb                   # Jupyter notebook for enumeration
-│   └── enumeration_results_test.tsv        # Output file with enumeration results
-│
-├── synthetic_accessibility/                # Synthetic accessibility evaluation
-│   ├── AiZynthFinder_Score/                # AiZynthFinder output, config, and script
-│   ├── RAscore_and_SAscore/                # SA & RA scoring code and data
-│   │   ├── 1K_SMILES.csv                   # Input SMILES
-│   │   ├── 1K_SMILES_SA_RA.csv             # Output scores
-│   │   ├── RAscore/                        # RAscore model code and weights
-│   │   ├── SAscore/                        # SAscore scoring script and pickle
-│   │   ├── Scoring_pipeline.ipynb          # Main notebook for scoring
-│   │   └── requirements.txt                # Environment dependencies
-│   └── Scored_Data/                        # Archived results (.tar.xz)
-│
-├── synthons_example/                       # Synthons and reaction examples
-│   ├── Freedom_3_0_reactions_example.tsv
-│   └── Freeedom 3_0_synthons_example.tsv
-│
-└── README.md                               # This file
+├── README.md
+├── diversity_and_physchem_analysis/
+│   ├── datasets/
+│   │   ├── ChEMBL35_for_scaffolds.csv.gz
+│   │   ├── ChEMBL_unique_scaffolds.csv.gz
+│   │   ├── Freedom_2_1M_random_compounds.csv.gz
+│   │   ├── Freedom_2_1M_random_compounds_unique_scaffolds.csv.gz
+│   │   ├── Freedom_3_1M_random_compounds.csv.gz
+│   │   └── Freedom_3_1M_random_compounds_unique_scaffolds.csv.gz
+│   ├── physicochemical_properties/
+│   │   ├── phys_chem_prop.xlsx
+│   │   └── plots.pptx
+│   └── UMAP/
+│       ├── run_umap.sh
+│       └── umap_jaccard.py
+├── enumeration_example/
+│   ├── enumeration.ipynb
+│   └── enumeration_results_test.tsv
+├── synthetic_accessibility/
+│   ├── AiZynthFinder_Score/
+│   │   ├── 1K_SMILES.log
+│   │   ├── 1K_SMILES.smi
+│   │   ├── 1K_SMILES_with_AiZynthFinder_Score.csv
+│   │   ├── custom_config.yml
+│   │   ├── process_log_file.py
+│   │   └── process_with_Aizynthfinder.sh
+│   ├── RAscore_and_SAscore/
+│   │   ├── 1K_SMILES.csv
+│   │   ├── 1K_SMILES_SA_RA.csv
+│   │   ├── Scoring_pipeline.ipynb
+│   │   ├── requirements.txt
+│   │   ├── RAscore/
+│   │   └── SAscore/
+│   │       ├── fpscores.pkl.gz
+│   │       └── sascorer.py
+│   └── Scored_Data/
+│       ├── 2_comp.tar.xz
+│       ├── 3_comp.tar.xz
+│       ├── random_1M.tar.xz
+│       └── t.py
+└── synthons_example/
+    ├── Freedom_3_0_reactions_example.tsv
+    └── Freeedom 3_0_synthons_example.tsv
+
 ```
 
 ---
